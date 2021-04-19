@@ -1,0 +1,30 @@
+<%- include('layouts/header') %>
+
+<div class="container">
+    <h1>Register Form</h1>
+    <form action="/auth/signup" method="POST">
+        <div class="inputs">
+
+            <input name="username" type="text" placeholder=" Username">
+
+            <input name="password" type="password" placeholder=" Password">
+
+            <input name="confirmPassword" type="password" placeholder=" Confirm password">
+
+            <input name="email" type="email" placeholder=" Email">
+
+            <input name="birthdate" type="date">
+
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <input type="submit" value="Sign up">
+        </div>
+
+    </form>
+</div>
+
+<%- include('layouts/footer') %>
