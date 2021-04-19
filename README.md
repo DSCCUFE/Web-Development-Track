@@ -1,7 +1,6 @@
 # DSC Web Development Track 2021
 
-#### How to use?
-
+## How to use?
 - Open the terminal in your device.
 - Clone the repository using `git clone https://github.com/DSCCUFE/Web-Development-Track.git`
 - Enter the folder using `cd Web-Development-Track`
