@@ -4,21 +4,63 @@
     <h1>Register Form</h1>
     <form action="/auth/signup" method="POST">
         <div class="inputs">
-
-            <input name="username" type="text" placeholder=" Username">
-
-            <input name="password" type="password" placeholder=" Password">
-
-            <input name="confirmPassword" type="password" placeholder=" Confirm password">
-
-            <input name="email" type="email" placeholder=" Email">
-
-            <input name="birthdate" type="date">
-
-            <select name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+            <div class="input-fields">
+                <input name="firstname" type="text" value="<%= (typeof firstname !== 'undefined') ? firstname : null %>"
+                    placeholder=" First Name">
+                <% if (typeof errIndex_firstname !== 'undefined' && errIndex_firstname > -1) { %>
+                <small class="err_msg"><%= errors[errIndex_firstname].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <input name="lastname" type="text" value="<%= (typeof lastname !== 'undefined') ? lastname : null %>"
+                    placeholder=" Last Name">
+                <% if (typeof errIndex_lastname !== 'undefined' && errIndex_lastname !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_lastname].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <input name="username" type="text" value="<%= (typeof username !== 'undefined') ? username : null %>"
+                    placeholder=" Username">
+                <% if (typeof errIndex_username !== 'undefined' && errIndex_username !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_username].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <input name="email" type="email" value="<%= (typeof email !== 'undefined') ? email : null %>"
+                    placeholder=" Email">
+                <% if (typeof errIndex_email !== 'undefined' && errIndex_email !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_email].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <input name="password" type="password" placeholder=" Password">
+                <% if (typeof errIndex_password !== 'undefined' && errIndex_password !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_password].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <input name="confirmPassword" type="password" placeholder="Confirm password">
+                <% if (typeof errIndex_confirmPassword !== 'undefined' && errIndex_confirmPassword !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_confirmPassword].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <input name="birthdate" value="<%= (typeof birthdate !== 'undefined') ? birthdate : null %>"
+                    type="date">
+                <% if (typeof errIndex_birthdate !== 'undefined' && errIndex_birthdate !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_birthdate].msg %></small>
+                <% } %>
+            </div>
+            <div class="input-fields">
+                <select name="gender">
+                    <option value="" selected disabled>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <% if (typeof errIndex_gender !== 'undefined' && errIndex_gender !== -1) { %>
+                <small class="err_msg"><%= errors[errIndex_gender].msg %></small>
+                <% } %>
+            </div>
         </div>
         <div class="buttons">
             <input type="submit" value="Sign up">
