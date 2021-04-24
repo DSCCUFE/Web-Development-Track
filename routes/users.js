@@ -31,6 +31,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', signup_validations, async (req, res) => {
     let errors = validationResult(req).errors;
+    if (req.body.password !== req.body.confirmPassword) errors.push({ param: 'confirmPassword', msg: 'Passwords don\'t match!' });
     if (errors.length) {
         return res.render('Sign Up', {
             title: ".Blogger | Sign Up",
@@ -75,6 +76,7 @@ router.post('/signup', signup_validations, async (req, res) => {
         user = new User(req.body);
         user = await user.save();
         console.log(`User created:\n${user}`);
+        req.flash('success', 'You registered successfully!');
         res.redirect('/auth/signin');
     } catch (err) {
         console.log(err);

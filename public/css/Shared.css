@@ -54,3 +54,34 @@
 .nav ul li:hover a {
     color: white;
 }
+
+.input-fields {
+    margin: 5% 0;
+}
+
+.err_msg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ff3333;
+}
+
+ul.flashes {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+    padding: 4% 6%;
+}
+
+ul.flashes li {
+    border-radius: 1px;
+    padding: 2%;
+    text-align: center;
+}
+
+ul.flash_success li {
+    background-color: #c3ffa0;
+    border: 2px solid green;
+}
+
+ul.flash_error li {
+    background-color: #ffa0a0;
+    border: 2px solid rgb(128, 0, 0);
+}

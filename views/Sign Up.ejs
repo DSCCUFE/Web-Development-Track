@@ -39,7 +39,7 @@
                 <% } %>
             </div>
             <div class="input-fields">
-                <input name="confirmPassword" type="password" placeholder="Confirm password">
+                <input name="confirmPassword" type="password" placeholder=" Confirm password">
                 <% if (typeof errIndex_confirmPassword !== 'undefined' && errIndex_confirmPassword !== -1) { %>
                 <small class="err_msg"><%= errors[errIndex_confirmPassword].msg %></small>
                 <% } %>
@@ -53,9 +53,19 @@
             </div>
             <div class="input-fields">
                 <select name="gender">
+                    <% if (typeof gender === 'undefined') { %>
                     <option value="" selected disabled>Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
+                    <% } else if (gender === 'male') { %>
+                    <option value="" disabled>Gender</option>
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                    <% } else if (gender === 'female') { %>
+                    <option value="" disabled>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female" selected>Female</option>
+                    <% } %>
                 </select>
                 <% if (typeof errIndex_gender !== 'undefined' && errIndex_gender !== -1) { %>
                 <small class="err_msg"><%= errors[errIndex_gender].msg %></small>

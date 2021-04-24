@@ -1,6 +1,7 @@
 <%- include('layouts/header') %>
 
 <div class="container">
+    <%- messages('partials/messages', locals) %>
     <h1>Sign in</h1>
     <form action="/auth/signin" method="POST">
         <div class="inputs">

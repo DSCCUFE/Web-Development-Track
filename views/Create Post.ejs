@@ -2,9 +2,21 @@
 
 <div class="container">
     <h1>Create post</h1>
-    <form>
-        <input type="text" placeholder="Title">
-        <textarea placeholder="Write your post here"></textarea>
+    <form action="/create-post" method="POST">
+        <div class="input-fields">
+            <input name="postTitle" type="text" value="<%= (typeof postTitle !== 'undefined') ? postTitle : null %>"
+                placeholder=" Title">
+            <% if (typeof errIndex_postTitle !== 'undefined' && errIndex_postTitle > -1) { %>
+            <small class="err_msg"><%= errors[errIndex_postTitle].msg %></small>
+            <% } %>
+        </div>
+        <div class="input-fields">
+            <textarea name="postContent"
+                placeholder=" Write your post here"><%= (typeof postContent !== 'undefined') ? postContent : null %></textarea>
+            <% if (typeof errIndex_postContent !== 'undefined' && errIndex_postContent > -1) { %>
+            <small class="err_msg"><%= errors[errIndex_postContent].msg %></small>
+            <% } %>
+        </div>
         <div class="buttons">
             <input type="submit" value="Post">
         </div>

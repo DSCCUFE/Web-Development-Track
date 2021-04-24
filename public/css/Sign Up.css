@@ -61,15 +61,6 @@ form::-webkit-scrollbar-thumb:hover {
     margin: 10% 10% 5%;
 }
 
-.input-fields {
-    margin: 5% 0;
-}
-
-.err_msg {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ff3333;
-}
-
 input {
     display: block;
     width: 100%;

@@ -1,0 +1,16 @@
+<div id="messages">
+    <% Object.keys(messages).forEach(function (type) { %>
+    <ul class="flashes flash_<%= type %>">
+        <% messages[type].forEach(function (message) { %>
+        <li><%= message %></li>
+        <% }) %>
+    </ul>
+    <% }) %>
+</div>
+
+<!-- 
+messages = {
+    success: ['hello', 'hi'],
+    error: ['wrong', 'bad']
+} 
+-->
